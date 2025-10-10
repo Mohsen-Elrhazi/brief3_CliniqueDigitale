@@ -8,7 +8,14 @@
       <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
       <!-- Entités JPA -->
-      <class>ma.project.model.Patient</class>
+      <class>ma.project.brief3_cliniquedigitale.model.Admin</class>
+      <class>ma.project.brief3_cliniquedigitale.model.Patient</class>
+      <class>ma.project.brief3_cliniquedigitale.model.Consultation</class>
+      <class>ma.project.brief3_cliniquedigitale.model.Docteur</class>
+      <class>ma.project.brief3_cliniquedigitale.model.Departement</class>
+      <class>ma.project.brief3_cliniquedigitale.model.Salle</class>
+
+
 
 
       <properties>

@@ -122,7 +122,6 @@
           <groupId>jakarta.ws.rs</groupId>
           <artifactId>jakarta.ws.rs-api</artifactId>
           <version>3.1.0</version>
-          <scope>provided</scope>
       </dependency>
 
       <dependency>
@@ -130,6 +129,14 @@
           <artifactId>weld-servlet-core</artifactId>
           <version>5.1.2.Final</version>
       </dependency>
+
+      <dependency>
+          <groupId>org.glassfish.expressly</groupId>
+          <artifactId>expressly</artifactId>
+          <version>5.0.0</version>
+      </dependency>
+
+
 
 
   </dependencies>
