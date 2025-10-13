@@ -20,7 +20,8 @@ public class Salle {
     private int capacite;
 
     @OneToMany(mappedBy = "salle", cascade = CascadeType.ALL)
-    private List<Consultation> consultations= new ArrayList<>();
+    private List
+            <Consultation> consultations= new ArrayList<>();
 
 
     public Salle(){}
