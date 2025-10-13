@@ -63,7 +63,7 @@ public class DocteurRepositoryImpl implements IGenericRepository<Docteur> {
         }catch(Exception e){
             if(tx.isActive()) tx.rollback();
             e.printStackTrace();
-        return false;
+            return false;
         }
     }
 
@@ -80,6 +80,11 @@ public class DocteurRepositoryImpl implements IGenericRepository<Docteur> {
 
     @Override
     public List<Docteur> findAll() {
-        return List.of();
+        try{
+            return em.createQuery("select d from Docteur d", Docteur.class).getResultList();
+        }catch(Exception e){
+            e.printStackTrace();
+            return List.of();
+        }
     }
 }
