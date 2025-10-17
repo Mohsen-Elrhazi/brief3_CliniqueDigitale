@@ -1,29 +1,43 @@
 package ma.project.brief3_cliniquedigitale.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
+import ma.project.brief3_cliniquedigitale.enums.Role;
+import ma.project.brief3_cliniquedigitale.enums.StatutConsultation;
 
-@MappedSuperclass
-public abstract class Personne {
-    @Column(name = "nom", nullable = false, length = 50)
+@Entity
+@Table(name = "personne")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Personne {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long id;
+
+    @Column( nullable = false, length = 50)
     protected String nom;
 
-    @Column(name= "prenom", nullable=false, length= 50)
+    @Column( nullable=false, length= 50)
     protected String prenom;
 
-    @Column(name= "email", nullable= false, length= 50)
+    @Column( nullable= false, length= 50)
     protected String email;
 
-    @Column(name= "motDePasse", nullable= false, length=50)
+    @Column( nullable= false, length=50)
     protected String motDePasse;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false,  length=20)
+    protected Role role;
 
     public Personne(){}
 
-    public Personne(String nom, String prenom, String email, String motDePasse) {
+    public Personne(String nom, String prenom, String email, String motDePasse, Role role) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.motDePasse = motDePasse;
+        this.role= role;
     }
 
     public String getNom(){return nom;}
@@ -37,5 +51,8 @@ public abstract class Personne {
 
     public String getMotDePasse(){return motDePasse;}
     public void setMotDePasse(String motDePasse){ this.motDePasse= motDePasse;}
+
+    public Role getRole() { return role; }
+    public void setRole(Role role) { this.role = role; }
 
 }

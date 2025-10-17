@@ -5,7 +5,7 @@ import ma.project.brief3_cliniquedigitale.repository.DocteurRepositoryImpl;
 
 public class TestMethodes {
     public static void main(String[] args){
-        DocteurRepositoryImpl dr= new DocteurRepositoryImpl();
-        Docteur d= new Docteur();
+//        DocteurRepositoryImpl dr= new DocteurRepositoryImpl();
+//        Docteur d= new Docteur();
     }
 }
