@@ -8,39 +8,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<html>
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <title>Dashboard Admin</title>
-</head>
-<body class="bg-gray-100 font-sans">
-<div class="flex h-screen overflow-hidden">
-    <!-- Sidebar -->
-    <%@ include file="sidebar.jsp" %>
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Merakiui Dashboard</title>
 
-    <!-- Main Content -->
-    <div class="flex-1 flex flex-col overflow-hidden">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/view/dashboard/admin/assets/css/dashboard.css">
+        <style>
+
+        </style>
+    </head>
+    <body class="bg-gray-50">
+    <!-- Sidebar -->
+        <%@ include file="sidebar.jsp" %>
+
+    <!-- Main Content Area -->
+    <div id="mainContent" class="main-content min-h-screen flex flex-col">
         <!-- Header -->
         <%@ include file="header.jsp" %>
 
-        <!-- Main Section -->
-        <main class="flex-1 overflow-y-auto p-6">
-            <div class="text-gray-600">
 
-<%--                <jsp:include page="<%= request.getAttribute("page") %>" />--%>
-       <c:import url="${page}" />
-
-
+        <!-- Main Content Section -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-4">
+                <!-- Votre contenu ici -->
+                <div class="min-h-screen">
+                    <!-- Section vide pour votre contenu -->
+                           <c:import url="${page}" />
+                </div>
             </div>
         </main>
     </div>
-</div>
 
-<script src="<%= request.getContextPath() %>/view/dashboard/admin/assets/js/dashboard.js"></script>
+    <script src="<%= request.getContextPath() %>/view/dashboard/admin/assets/js/dashboard.js"></script>
 
-</body>
-</html>
+    </body>
+    </html>

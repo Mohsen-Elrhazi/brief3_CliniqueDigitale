@@ -23,4 +23,28 @@ public class Departement {
     public Departement(String nom) {
         this.nom = nom;
     }
+
+    public Long getIdDepartement() {
+        return idDepartement;
+    }
+
+    public List<Docteur> getDocteurs() {
+        return docteurs;
+    }
+
+    public String getNom(){
+        return this.nom;
+    }
+
+    public void setIdDepartement(Long idDepartement) {
+        this.idDepartement = idDepartement;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setDocteurs(List<Docteur> docteurs) {
+        this.docteurs = docteurs;
+    }
 }

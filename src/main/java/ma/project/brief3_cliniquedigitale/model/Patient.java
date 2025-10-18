@@ -30,6 +30,7 @@ public class Patient extends Personne {
         this.taille= taille;
     }
 
+
     public double getPoids() {
         return poids;
     }

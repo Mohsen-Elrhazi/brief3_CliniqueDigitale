@@ -80,7 +80,8 @@ public class DepartementRepositoryImpl implements IGenericRepository<Departement
     @Override
     public List<Departement> findAll() {
         try{
-            return em.createQuery("select d from Departement d", Departement.class).getResultList();
+            List<Departement> departements=  em.createQuery("select d from Departement d", Departement.class).getResultList();
+            return departements;
         }catch(Exception e){
             e.printStackTrace();
             return List.of();
