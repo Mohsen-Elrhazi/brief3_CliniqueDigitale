@@ -7,6 +7,6 @@ public interface IGenericRepository<T> {
     T save(T entity);
     T update(T entity);
     boolean delete(Long id);
-    Optional<T> findByid(Long id);
+    Optional<T> findById(Long id);
     List<T> findAll();
 }

@@ -41,7 +41,7 @@ public class AdminRepositoryImpl implements  IGenericRepository<Admin>{
     }
 
     @Override
-    public Optional<Admin> findByid(Long id) {
+    public Optional<Admin> findById(Long id) {
         return Optional.empty();
     }
 

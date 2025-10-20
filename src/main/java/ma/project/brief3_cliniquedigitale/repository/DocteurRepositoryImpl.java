@@ -68,7 +68,7 @@ public class DocteurRepositoryImpl implements IGenericRepository<Docteur> {
     }
 
     @Override
-    public Optional<Docteur> findByid(Long id) {
+    public Optional<Docteur> findById(Long id) {
         try{
             Docteur docteur= em.find(Docteur.class, id);
             return Optional.ofNullable(docteur);
@@ -81,7 +81,8 @@ public class DocteurRepositoryImpl implements IGenericRepository<Docteur> {
     @Override
     public List<Docteur> findAll() {
         try{
-            return em.createQuery("select d from Docteur d", Docteur.class).getResultList();
+            List<Docteur> docteurs= em.createQuery("select d from Docteur d", Docteur.class).getResultList();
+            return docteurs;
         }catch(Exception e){
             e.printStackTrace();
             return List.of();

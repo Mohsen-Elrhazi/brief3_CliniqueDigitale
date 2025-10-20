@@ -34,6 +34,7 @@ public class DepartementRepositoryImpl implements IGenericRepository<Departement
     public Departement update(Departement departement) {
         EntityTransaction tx= em.getTransaction();
         try{
+            tx.begin();
             Departement updated= em.merge(departement);
             tx.commit();
             return updated;
@@ -67,7 +68,7 @@ public class DepartementRepositoryImpl implements IGenericRepository<Departement
     }
 
     @Override
-    public Optional<Departement> findByid(Long id) {
+    public Optional<Departement> findById(Long id) {
         try{
             Departement departement= em.find(Departement.class, id);
             return Optional.ofNullable(departement);

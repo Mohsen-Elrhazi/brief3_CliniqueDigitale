@@ -2,6 +2,7 @@ package ma.project.brief3_cliniquedigitale.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import ma.project.brief3_cliniquedigitale.model.Departement;
 import ma.project.brief3_cliniquedigitale.model.Patient;
 import ma.project.brief3_cliniquedigitale.util.JPAUtil;
 
@@ -41,12 +42,18 @@ public class PatientRepositoryImpl implements IGenericRepository<Patient>{
     }
 
     @Override
-    public Optional<Patient> findByid(Long id) {
+    public Optional<Patient> findById(Long id) {
         return Optional.empty();
     }
 
     @Override
     public List<Patient> findAll() {
-        return List.of();
+        try{
+            List<Patient> patients=  em.createQuery("select p from Patient p", Patient.class).getResultList();
+            return patients;
+        }catch(Exception e){
+            e.printStackTrace();
+            return List.of();
+        }
     }
 }

@@ -34,9 +34,9 @@ public class DepartementController extends HttpServlet {
           switch(action){
               case "save": save(request, response);
                   break;
-              case "update":
+              case "update": update(request, response);
                   break;
-              case "delete":
+              case "delete": delete(request, response);
                   break;
               default:
                   response.sendRedirect(request.getContextPath() + "/admin/departements");
@@ -47,6 +47,17 @@ public class DepartementController extends HttpServlet {
         String nom= request.getParameter("nom");
         Departement departement= new Departement(nom);
         departementService.save(departement);
+        response.sendRedirect(request.getContextPath() + "/admin/departements");
+    }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Long id= Long.valueOf(request.getParameter("id"));
+        departementService.delete(id);
+        response.sendRedirect(request.getContextPath() + "/admin/departements");
+    }
+
+    private void update(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         response.sendRedirect(request.getContextPath() + "/admin/departements");
     }
 }

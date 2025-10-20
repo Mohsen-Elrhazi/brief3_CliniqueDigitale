@@ -3,6 +3,8 @@ package ma.project.brief3_cliniquedigitale.service;
 import ma.project.brief3_cliniquedigitale.model.Patient;
 import ma.project.brief3_cliniquedigitale.repository.PatientRepositoryImpl;
 
+import java.util.List;
+
 public class PatientService {
     private PatientRepositoryImpl patientRepository;
 
@@ -19,5 +21,9 @@ public class PatientService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public List<Patient> findAll(){
+        return patientRepository.findAll();
     }
 }

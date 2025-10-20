@@ -4,6 +4,7 @@ import ma.project.brief3_cliniquedigitale.model.Departement;
 import ma.project.brief3_cliniquedigitale.repository.DepartementRepositoryImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 public class DepartementService {
     private DepartementRepositoryImpl departementRepository ;
@@ -18,5 +19,14 @@ public class DepartementService {
 
     public List<Departement> findAll(){
         return departementRepository.findAll();
+    }
+
+    public Optional<Departement> findByid(Long id) {
+       return departementRepository.findById(id);
+    }
+
+    public boolean delete(Long id){
+        if(departementRepository.delete(id)){ return true;}
+        else{ return false;}
     }
 }

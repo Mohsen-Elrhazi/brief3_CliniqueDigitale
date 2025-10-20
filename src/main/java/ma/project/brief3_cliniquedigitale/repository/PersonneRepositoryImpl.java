@@ -43,7 +43,7 @@ public class PersonneRepositoryImpl implements IGenericRepository<Personne>{
     }
 
     @Override
-    public Optional<Personne> findByid(Long id) {
+    public Optional<Personne> findById(Long id) {
         return Optional.empty();
     }
 

@@ -40,6 +40,8 @@ public class Personne {
         this.role= role;
     }
 
+    public Long getId(){return this.id ; }
+
     public String getNom(){return nom;}
     public void setNom(String nom){ this.nom= nom;}
 

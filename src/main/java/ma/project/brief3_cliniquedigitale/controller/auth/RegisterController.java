@@ -46,7 +46,7 @@ public class RegisterController extends HttpServlet {
             Patient patient=new Patient(nom, prenom, email, motDePasse, poids, taille);
             patientService.save(patient);
 
-        response.sendRedirect("login");
+            response.sendRedirect("login");
         }else{
             request.setAttribute("erreur", "Email déja utillisé");
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/auth/register.jsp");
